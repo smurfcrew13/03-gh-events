@@ -1,5 +1,12 @@
 name: Events Demo 1
-on: ...
+on:
+  pull_request:
+    # this needs to be indented and types specified to work
+    types:
+      - opened
+  workflow_dispatch: # must be on the same level as pull_request
+  # ^^^ this is a queue for future events
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
